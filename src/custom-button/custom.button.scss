@@ -1,0 +1,33 @@
+.custom-button
+{
+    height: 50px;
+    min-width: 165px;
+    width: auto;
+    font-size: 15px;
+    background-color: black;
+    color:white;
+    margin-right:5px;
+    
+     
+    &:hover
+    {
+        background-color:white;
+        color: black;
+        border:2px solid black;
+    }
+    &.google-sign-in
+    {
+        display: inline;
+        background-color: aqua;
+        color:white;
+
+        &:hover
+        {
+            background-color: blue;
+            border:none;
+        }
+    }
+
+
+    
+}

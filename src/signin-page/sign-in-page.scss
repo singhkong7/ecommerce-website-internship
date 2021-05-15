@@ -1,0 +1,17 @@
+.sign-in
+{
+    padding-top: 15px;
+    width: 30vh;
+    display: flex;
+    flex-direction: column;
+
+    span
+    {
+        color: brown;
+    }
+    .button
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+}

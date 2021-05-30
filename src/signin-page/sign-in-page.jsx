@@ -2,7 +2,7 @@ import React from "react";
 import CustomButton from "../custom-button/custom-button";
 import './sign-in-page.scss';
 import FormInput from "./sign-up";
-import {auth,signInWithGoogle} from "../custom-button/firebase/firebase-utility";
+import {auth,signInWithGoogle} from "../firebase/firebase-utility";
 class SignInPage extends React.Component
 {
     constructor(props)

@@ -6,7 +6,7 @@ import Shop_page from "./shop_page/shop_page";
 import {Switch,Route, Redirect} from 'react-router-dom';
 import Header from "./header/header-component";
 import Signin from "./signin-page/sign-in";
-import {auth,createUserProfileDocument} from "./custom-button/firebase/firebase-utility";
+import {auth,createUserProfileDocument} from "./firebase/firebase-utility";
 import {setCurrentUser} from "./Redux/user/user-actions";
 const Hats = () =>(
   <div>

@@ -1,7 +1,7 @@
 import React from "react";
 import FormInput from "../signin-page/sign-up";
 import CustomButton from "../custom-button/custom-button";
-import {auth, createUserProfileDocument} from "../firebase/firebase-utility";
+import {auth, createUserProfileDocument} from "../custom-button/firebase/firebase-utility";
 import "./sign-up-page.scss";
 class SignUp extends React.Component{
     constructor()
@@ -18,7 +18,7 @@ class SignUp extends React.Component{
     {
         event.preventDefault();
         const{displayName,email, password, confirmPassword}=this.state;
-        if(password != confirmPassword) 
+        if(password !== confirmPassword) 
         {
             alert("Password is incorrect");
             return;
@@ -50,39 +50,42 @@ class SignUp extends React.Component{
                 <h1 className="title">I do not have an account</h1>
                 <h4>Sign up with your emailId and password</h4>
                 <form className="sign-up-page" onSubmit={this.handleSubmit}>
+                    <label>Display name</label>
                     <FormInput
                         type='text'
                         name='displayName'
                         value={displayName}
                         onChange={this.handleChange}
-                        label='Display Name'
                         required
                     />
+                    <label>Email</label>
                     <FormInput
                         type='text'
                         name='email'
                         value={email}
                         onChange={this.handleChange}
-                        label='Email'
                         required
                     />
+                    <label>Password</label>
                     <FormInput
-                        type='text'
-                        name='Password'
+                        type='password'
+                        name='password'
                         value={password}
                         onChange={this.handleChange}
-                        label='Password'
                         required
                     />
+                    <label>Confirm Password</label>
                     <FormInput
-                        type='text'
+                        type='password'
                         name='confirmPassword'
                         value={confirmPassword}
                         onChange={this.handleChange}
-                        label='Confirm Password'
                         required
                     />
-                    <CustomButton type="submit">SIGN UP</CustomButton>
+                    <div className="button">
+                        <CustomButton type="submit">SIGN UP</CustomButton>
+                    </div>
+                    
                 </form>
             </div>
             

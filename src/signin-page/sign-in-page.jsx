@@ -2,7 +2,7 @@ import React from "react";
 import CustomButton from "../custom-button/custom-button";
 import './sign-in-page.scss';
 import FormInput from "./sign-up";
-import {signInWithGoogle} from "../firebase/firebase-utility";
+import {auth,signInWithGoogle} from "../custom-button/firebase/firebase-utility";
 class SignInPage extends React.Component
 {
     constructor(props)
@@ -15,14 +15,15 @@ class SignInPage extends React.Component
     }
     handleSubmit=async event => {
         event.preventDefault();
-        const{email, password}=this.state;
+        const{email,password}=this.state;
         try {
             //await auth.signInWithEmailAndPassword(email, password);
+            await auth.signInWithEmailAndPassword(email, password);
             this.setState({email:" ", password:" "});
         } 
         catch (error) 
         {
-                
+            console.error(error); 
         }
         
     }
@@ -32,6 +33,7 @@ class SignInPage extends React.Component
     }
     render()
     {
+        const{email,password}=this.state;
         return(
             <div className="sign-in">
                 <h1>I already have an account</h1>
@@ -42,9 +44,9 @@ class SignInPage extends React.Component
                         <label>Email</label><br></br>
                         <FormInput
                             name="email" 
-                            type="email"  
+                            type="text"  
                             handleChange={this.handleChange} 
-                            value={this.state.email}
+                            value={email}
                             required 
                         /><br></br>
 
@@ -53,7 +55,7 @@ class SignInPage extends React.Component
                             name="password" 
                             type="password" 
                             handleChange={this.handleChange} 
-                            value={this.state.password} 
+                            value={password} 
                             required 
                         /><br></br>
 

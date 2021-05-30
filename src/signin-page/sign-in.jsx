@@ -2,7 +2,7 @@ import React from "react";
 import "./sign-in.scss";
 import SignInPage from "./sign-in-page";
 import SignUp from "../Sign-up-page/Sign-up-page";
-const signIn = () =>
+const Signin = () =>
 (
     <div className="signIn">
         <div>
@@ -14,4 +14,4 @@ const signIn = () =>
 
     </div>
 );
-export default signIn;
+export default Signin;

@@ -18,6 +18,15 @@
         flex-direction: column;
         overflow: scroll;
         
-
+        .empty
+        {
+            margin:50px auto;
+            font-size: 18px;
+        }
+        
     }
+    .go-to
+        {
+            text-align: center;
+        }
 }

@@ -6,8 +6,11 @@ import Shop_page from "./shop_page/shop_page";
 import {Switch,Route, Redirect} from 'react-router-dom';
 import Header from "./header/header-component";
 import Signin from "./signin-page/sign-in";
+import CheckoutPage from "./checkout-page/checkout-page";
 import {auth,createUserProfileDocument} from "./firebase/firebase-utility";
 import {setCurrentUser} from "./Redux/user/user-actions";
+import {createStructuredSelector} from "reselect";
+import {selectCurrentUser} from "./Redux/user/user-selector";
 const Hats = () =>(
   <div>
     
@@ -76,6 +79,7 @@ class App extends React.Component {
             <Route  path='/Men' component={Men} />
             <Route  path='/Women' component={Women} />
             <Route  path="/shop" component={Shop_page} />
+            <Route exact path="/checkoutpage" component={CheckoutPage} />
             <Route 
               exact 
               path='/signin' 
@@ -94,9 +98,9 @@ class App extends React.Component {
     );
   }
 }
-const mapToStateProps= state => ({
+const mapToStateProps= createStructuredSelector ({
 
-  currentUser:state.currentUser
+  currentUser:selectCurrentUser
   
 });
 const mapDispatchToProps= dispatch => ({
